@@ -1,0 +1,24 @@
+{
+	"name": "python-growi",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+	],
+	"service": "dev",
+	"workspaceFolder": "/workspace",
+	"settings": {
+		"files.autoSave": "afterDelay",
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pep8Enabled": false,
+    "python.linting.flake8Enabled": true,
+		"python.linting.flake8Args": [
+			"--ignore=E111, E114, E402, E501"
+		],
+	},
+	"extensions": [
+		"ms-python.python",
+		"shardulm94.trailing-spaces"
+	],
+	"shutdownAction": "stopCompose"
+}
