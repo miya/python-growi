@@ -1,5 +1,6 @@
 import json
 import requests
+from requests.api import request
 
 
 class API:
@@ -25,11 +26,19 @@ class API:
     elif methot == 'PUT':
       return requests.put(url, headers=headers, data=json.dumps(payload), timeout=self.time_out).json()
 
+  #
+  # /admin-home
+  #
+
   # def admin_home(self):
   #   ''' Get adminHome parameters
   #   '''
   #   endpoint = 'admin-home/'
   #   return request(endpoint)
+
+  #
+  # /app-settings
+  #
 
   def app_settings(self):
     ''' Get app setting params
@@ -78,3 +87,105 @@ class API:
   #   '''
   #   endpoint = 'app-settings/plugin-setting'
   #   return request(endpoint, method='PUT', params=params)
+
+  #
+  # /attachment
+  #
+
+  def attachment_list(self, **params):
+    ''' Get attachment list
+    '''
+    endpoint = 'attachment/list'
+    return self.request(endpoint, params=params)
+
+  #
+  # /bookmarks
+  #
+
+  def bookmarks_info(self, **params):
+    ''' Get bookmarked info
+    '''
+    endpoint = 'bookmarks/info'
+    return self.request(endpoint, params=params)
+
+  def my_bookmarks(self, user_id, **params):
+    ''' Get my bookmarked status
+    '''
+    endpoint = f'bookmarks/{user_id}'
+    return self.request(endpoint, params=params)
+
+  def bookmarks(self, **params):
+    ''' Update bookmarked status
+    '''
+    endpoint = 'bookmarks/'
+    return self.request(endpoint, methot='PUT', params=params)
+
+  #
+  # /customize_setting
+  #
+
+  # def customize_setting(self):
+  #   ''' Get customize parameters
+  #   '''
+  #   endpoint = 'customize-setting/'
+  #   return self.request(endpoint)
+
+  # def customize_setting_layout(self):
+  #   ''' Get layout
+  #   '''
+  #   endpoint = 'customize-setting/layout/'
+  #   return self.request(endpoint)
+
+  # def customize_setting_update_layout(self, **params):
+  #   ''' Update layout
+  #   '''
+  #   endpoint = 'customize-setting/layout/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # def customize_setting_theme_asset_path(self, **params):
+  #   ''' Get theme asset path
+  #   '''
+  #   endpoint = 'customize-setting/theme/asset-path/'
+  #   return self.request(endpoint, params=params)
+
+  # def customize_setting_theme(self, **params):
+  #   ''' Update theme
+  #   '''
+  #   endpoint = 'customize-setting/theme/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # def customize_setting_function(self, **params):
+  #   ''' Update function
+  #   '''
+  #   endpoint = 'customize-setting/function/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # def customize_setting_highlight(self, **params):
+  #   ''' Update highlight
+  #   '''
+  #   endpoint = 'customize-setting/highlight/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # def customize_setting_customize_title(self, **params):
+  #   ''' Update customizeTitle
+  #   '''
+  #   endpoint = 'customize-setting/customize-title/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # def customize_setting_customize_header(self, **params):
+  #   ''' Update customizeHeader
+  #   '''
+  #   endpoint = 'customize-setting/customize-header/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # def customize_setting_customize_css(self, **params):
+  #   ''' Update customizeCss
+  #   '''
+  #   endpoint = 'customize-setting/customize-css/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # def customize_setting_customize_script(self, **params):
+  #   ''' Update customizeScript
+  #   '''
+  #   endpoint = 'customize-setting/customize-script/'
+  #   return self.request(endpoint, methot='PUT', params=params)
