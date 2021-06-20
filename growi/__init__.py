@@ -1,1 +1,1 @@
-from .growi import API
+from .growi import API  # noqa: F401
