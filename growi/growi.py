@@ -25,6 +25,9 @@ class API:
     elif methot == 'PUT':
       return requests.put(url, headers=headers, data=json.dumps(payload), timeout=self.time_out).json()
 
+    elif methot == 'DELETE':
+      return requests.delete(url, headers=headers, params=payload).json()
+
   #
   # /admin-home
   #
