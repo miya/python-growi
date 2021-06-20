@@ -5,4 +5,9 @@
   "python.linting.flake8Args": [
     "--ignore=E111, E114, E402, E501"
   ],
+  "cSpell.words": [
+    "VENV",
+    "growi",
+    "pipenv"
+  ],
 }
