@@ -10,7 +10,7 @@ wip
 ## Usage
 wip
 
-## Development Startup
+## Development
 <details><summary>🔍 show</summary><div>
 
 Install the python extension to vscode
