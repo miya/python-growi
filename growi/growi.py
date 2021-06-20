@@ -191,3 +191,73 @@ class API:
   #   '''
   #   endpoint = 'customize-setting/customize-script/'
   #   return self.request(endpoint, methot='PUT', params=params)
+
+  #
+  # /export
+  #
+  def export_status(self):
+    ''' Get properties of stored zip files for export
+    '''
+    endpoint = 'export/status/'
+    return self.request(endpoint)
+
+  # WIP
+  # def export(self, body):
+  #   ''' Generate zipped jsons for collections
+  #   '''
+  #   endpoint = 'export/'
+  #   return self.request(endpoint, methot='POST', params=body)
+
+  def export_delete(self, file_name):
+    ''' Delete the file
+    '''
+    endpoint = f'export/{file_name}'
+    return self.request(endpoint, methot='DELETE')
+
+  #
+  # /healthcheck
+  #
+  def healthcheck(self, **params):
+    ''' Check whether the server is healthy or not
+    '''
+    endpoint = 'healthcheck/'
+    return self.request(endpoint, params=params)
+
+  #
+  # /import
+  #
+  def import_(self):
+    ''' Get import settings params
+    '''
+    endpoint = 'import/'
+    return self.request(endpoint)
+
+  def import_status(self, **params):
+    ''' Import a collection from a zipped json
+    '''
+    endpoint = 'import/status'
+    return self.request(endpoint, params=params)
+
+  # WIP
+  # def import_collection(self, **params):
+  #   ''' Import a collection from a zipped json
+  #   '''
+  #   endpoint = 'import/'
+  #   return self.request(endpoint, methot='POST', params=params)
+
+  # WIP
+  # def import_upload(self, **params):
+  #   ''' Upload a zip file
+  #   '''
+  #   endpoint = '/import/upload'
+  #   return self.request(endpoint, params=params)
+
+  def import_delete(self):
+    ''' Delete all zip files
+    '''
+    endpoint = 'import/all/'
+    return self.request(endpoint, methot='DELETE')
+
+  #
+  # /markdown
+  #
