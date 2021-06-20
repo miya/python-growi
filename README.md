@@ -10,6 +10,16 @@ Install the python extension to vscode
 
 [ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
+Clone this repository
+```bash
+$ git clone https://github.com/miya/python-growi
+```
+
+Change directly to python-growi
+```bash
+$ cd python-growi
+```
+
 Install pipenv locally
 ```bash
 $ pip install pipenv
@@ -18,11 +28,6 @@ $ pip install pipenv
 Create a virtual environment under the project directory
 ```bash
 $ export PIPENV_VENV_IN_PROJECT=true
-```
-
-Clone this repository
-```bash
-$ git clone https://github.com/miya/python-growi
 ```
 
 Install dependencies
