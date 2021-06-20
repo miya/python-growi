@@ -25,12 +25,12 @@ Clone this repository
 $ git clone https://github.com/miya/python-growi
 ```
 
-Enter the virtual environment
-```
-$ pipenv shell
-```
-
 Install dependencies
 ```bash
 $ pipenv install --dev
+```
+
+Enter the virtual environment
+```
+$ pipenv shell
 ```
