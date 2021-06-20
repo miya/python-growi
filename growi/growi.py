@@ -1,6 +1,5 @@
 import json
 import requests
-from requests.api import request
 
 
 class API:
