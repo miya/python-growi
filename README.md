@@ -22,7 +22,7 @@ $ export PIPENV_VENV_IN_PROJECT=true
 
 Clone this repository
 ```bash
-$ git cline https://github.com/miya/python-growi
+$ git clone https://github.com/miya/python-growi
 ```
 
 Enter the virtual environment
