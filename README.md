@@ -4,7 +4,14 @@ Python wrapper for the GROWI REST API v3
 
 API Reference: https://docs.growi.org/en/api/rest-v3.html
 
+## Demo
+wip
+
+## Usage
+wip
+
 ## Development Startup
+<details><summary>🔍 show</summary><div>
 
 Install the python extension to vscode
 
@@ -39,3 +46,5 @@ Enter the virtual environment
 ```
 $ pipenv shell
 ```
+
+</div></details>
