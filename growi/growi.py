@@ -3,15 +3,14 @@ import requests
 
 
 class API:
-  def __init__(self, protocol, host_address, access_token, time_out=3.5):
-    self.protocol = protocol
-    self.host_address = host_address
+  def __init__(self, growi_url, access_token, time_out=3.5):
+    self.growi_url = growi_url
     self.access_token = access_token
     self.time_out = time_out
 
   def request(self, endpoint, methot='GET', params=None):
     api = '_api/v3'
-    url = f'{self.protocol}://{self.host_address}/{api}/{endpoint}'
+    url = f'{self.growi_url}/{api}/{endpoint}'
     headers = {'content-type': 'application/json'}
     payload = {'access_token': self.access_token}
     if params:
