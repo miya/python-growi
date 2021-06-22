@@ -261,3 +261,69 @@ class API:
   #
   # /markdown
   #
+  # def markdown_setting(self):
+  #   ''' Get markdown parameters
+  #   '''
+  #   endpoint = 'markdown-setting/'
+  #   return self.request(endpoint)
+
+  # def markdown_setting_lineBreak(self, **params):
+  #   ''' Update lineBreak setting
+  #   '''
+  #   endpoint = 'markdown-setting/lineBreak/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # def markdown_setting_indent(self, **params):
+  #   ''' Update indent setting
+  #   '''
+  #   endpoint = 'markdown-setting/indent/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # def markdown_setting_presentation(self, **params):
+  #   ''' Update presentation
+  #   '''
+  #   endpoint = 'markdown-setting/presentation/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # def markdown_setting_xss(self, **params):
+  #   ''' Update xss
+  #   '''
+  #   endpoint = 'markdown-setting/xss/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  #
+  # /mongo
+  #
+  # def mongo_collections(self):
+  #   ''' Get mongodb collections names
+  #   '''
+  #   endpoint = 'mongo/collections/'
+  #   return self.request(endpoint)
+
+  #
+  # /notification-setting
+  #
+  def notification_setting(self):
+    ''' Get notification paramators
+    '''
+
+    endpoint = 'notification-setting/'
+    return self.request(endpoint)
+
+  def notification_setting_slack_configuration(self, **param):
+    ''' Update slack configuration setting
+    '''
+    endpoint = 'notification-setting/slack-configuration/'
+    return self.request(endpoint, methot='PUT', params=param)
+
+  def notification_setting_user_notification(self, **params):
+    ''' Add user notification setting
+    '''
+    endpoint = 'notification-setting/user-notification/'
+    return self.request(endpoint, methot='POST', params=params)
+
+  def notification_setting_delete_user_notification(self, _id):
+    ''' Delete user trigger notification pattern
+    '''
+    endpoint = f'notification-setting/user-notification/{_id}/'
+    return self.request(endpoint, methot='DELETE')
