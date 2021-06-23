@@ -348,6 +348,13 @@ class API:
   #
   def pages(self, **params):
     ''' Create page
+
+    Args:
+      path(str): Page path
+      body(str): Text of page
+
+    Returns:
+      Succeeded to create page
     '''
     endpoint = 'pages/'
     return self.request(endpoint, methot='POST', params=params)
