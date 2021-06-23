@@ -11,22 +11,13 @@ class API:
   def request(self, endpoint, methot='GET', params=None):
     api = '_api/v3'
     url = f'{self.growi_url}/{api}/{endpoint}'
-    headers = {'content-type': 'application/json'}
     payload = {'access_token': self.access_token}
+
     if params:
       payload.update(params)
 
-    if methot == 'GET':
-      return requests.get(url, headers=headers, params=payload, timeout=self.timeout).json()
-
-    elif methot == 'POST':
-      return requests.post(url, headers=headers, data=json.dumps(payload), timeout=self.timeout).json()
-
-    elif methot == 'PUT':
-      return requests.put(url, headers=headers, data=json.dumps(payload), timeout=self.timeout).json()
-
-    elif methot == 'DELETE':
-      return requests.delete(url, headers=headers, params=payload).json()
+    with requests.Session() as session:
+      return session.request(method=methot, url=url, data=payload, timeout=self.timeout).json()
 
   #
   # /admin-home
