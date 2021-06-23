@@ -3,6 +3,13 @@ import requests
 
 
 class API:
+  ''' GROWI REST API v3
+
+  Attributes:
+    growi_url(str): GROWI URL
+    access_token(str): API token created in '/me'.
+    timeout(float): requests timeout (default: 3.5)
+  '''
   def __init__(self, growi_url, access_token, timeout=3.5):
     self.growi_url = growi_url
     self.access_token = access_token
