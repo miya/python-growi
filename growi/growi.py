@@ -303,27 +303,155 @@ class API:
   #
   # /notification-setting
   #
-  def notification_setting(self):
-    ''' Get notification paramators
-    '''
+  # def notification_setting(self):
+  #   ''' Get notification paramators
+  #   '''
 
-    endpoint = 'notification-setting/'
-    return self.request(endpoint)
+  #   endpoint = 'notification-setting/'
+  #   return self.request(endpoint)
 
-  def notification_setting_slack_configuration(self, **param):
-    ''' Update slack configuration setting
-    '''
-    endpoint = 'notification-setting/slack-configuration/'
-    return self.request(endpoint, methot='PUT', params=param)
+  # def notification_setting_slack_configuration(self, **param):
+  #   ''' Update slack configuration setting
+  #   '''
+  #   endpoint = 'notification-setting/slack-configuration/'
+  #   return self.request(endpoint, methot='PUT', params=param)
 
-  def notification_setting_user_notification(self, **params):
-    ''' Add user notification setting
+  # def notification_setting_user_notification(self, **params):
+  #   ''' Add user notification setting
+  #   '''
+  #   endpoint = 'notification-setting/user-notification/'
+  #   return self.request(endpoint, methot='POST', params=params)
+
+  # def notification_setting_delete_user_notification(self, _id):
+  #   ''' Delete user trigger notification pattern
+  #   '''
+  #   endpoint = f'notification-setting/user-notification/{_id}/'
+  #   return self.request(endpoint, methot='DELETE')
+
+  # def notification_setting_global_notification(self, **params):
+  #   ''' Add global notification
+  #   '''
+  #   endpoint = 'notification-setting/global-notification/'
+  #   return self.request(endpoint, methot='POST', params=params)
+
+  #
+  # /page
+  #
+  def page_like(self, **params):
+    ''' Update liked status
     '''
-    endpoint = 'notification-setting/user-notification/'
+    endpoint = 'page/likes/'
+    return self.request(endpoint, methot='PUT', params=params)
+
+  #
+  # /pages
+  #
+  def pages(self, **params):
+    ''' Create page
+    '''
+    endpoint = 'pages/'
     return self.request(endpoint, methot='POST', params=params)
 
-  def notification_setting_delete_user_notification(self, _id):
-    ''' Delete user trigger notification pattern
+  def pages_rename(self, **params):
+    ''' Rename page
     '''
-    endpoint = f'notification-setting/user-notification/{_id}/'
+    endpoint = 'pages/rename/'
+    return self.request(endpoint, methot='PUT', params=params)
+
+  def pages_empty_trash(self):
+    ''' Empty trash
+    '''
+    endpoint = 'pages/empty-trash/'
     return self.request(endpoint, methot='DELETE')
+
+  def pages_duplicate(self, **params):
+    ''' Duplicate page
+    '''
+    endpoint = 'pages/duplicate/'
+    return self.request(endpoint, methot='POST', params=params)
+
+  def pages_subordinated_list(self, **params):
+    '''
+    '''
+    endpoint = 'pages/subordinated-list/'
+    return self.request(endpoint, params=params)
+
+  #
+  # /personal-setting
+  #
+  def personal_setting(self):
+    ''' Get personal parameters
+    '''
+    endpoint = 'personal-setting/'
+    return self.request(endpoint)
+
+  def personal_setting_is_password_set(self):
+    ''' Get whether a password has been set
+    '''
+    endpoint = 'personal-setting/is-password-set/'
+    return self.request(endpoint)
+
+  # WIP
+  # def personal_setting_update(self, **params):
+  #   ''' Update personal setting
+  #   '''
+  #   endpoint = 'personal-setting/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # WIP
+  # def personal_setting_image_type(self, **params):
+  #   ''' Update user image type
+  #   '''
+  #   endpoint = 'personal-setting/image-type'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  def personal_setting_external_accounts(self):
+    ''' Get external accounts that linked current user
+    '''
+    endpoint = 'personal-setting/external-accounts'
+    return self.request(endpoint)
+
+  # WIP
+  # def personal_setting_password(self, **params):
+  #   ''' Update user password
+  #   '''
+  #   endpoint = 'personal-setting/password/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # WIP
+  # def personal_setting_associate_ldap(self, **params):
+  #   ''' Associate Ldap account
+  #   '''
+  #   endpoint = 'personal-setting/associate-ldap/'
+  #   return self.request(endpoint, methot='PUT', params=params)
+
+  # WIP
+  # def personal_setting_disassociate_ldap(self, **param):
+  #   ''' Disassociate Ldap account
+  #   '''
+  #   endpoint = 'personal-setting/disassociate-ldap/'
+  #   return self.request(endpoint, methot='PUT', params=param)
+
+  #
+  # /revisions
+  #
+  def revisions_list(self, **params):
+    ''' Get revisions by page id
+    '''
+    endpoint = 'revisions/list/'
+    return self.request(endpoint, params=params)
+
+  def revisions(self, revision_id, **params):
+    ''' Get one revision by id
+    '''
+    endpoint = f'revisions/{revision_id}'
+    return self.request(endpoint, params=params)
+
+  #
+  # /search
+  #
+  def search_indices(self):
+    ''' Get current status of indices
+    '''
+    endpoint = 'search/indices/'
+    return self.request(endpoint)
