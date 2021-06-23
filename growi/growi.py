@@ -3,10 +3,10 @@ import requests
 
 
 class API:
-  def __init__(self, growi_url, access_token, time_out=3.5):
+  def __init__(self, growi_url, access_token, timeout=3.5):
     self.growi_url = growi_url
     self.access_token = access_token
-    self.time_out = time_out
+    self.timeout = timeout
 
   def request(self, endpoint, methot='GET', params=None):
     api = '_api/v3'
@@ -17,13 +17,13 @@ class API:
       payload.update(params)
 
     if methot == 'GET':
-      return requests.get(url, headers=headers, params=payload, timeout=self.time_out).json()
+      return requests.get(url, headers=headers, params=payload, timeout=self.timeout).json()
 
     elif methot == 'POST':
-      return requests.post(url, headers=headers, data=json.dumps(payload), timeout=self.time_out).json()
+      return requests.post(url, headers=headers, data=json.dumps(payload), timeout=self.timeout).json()
 
     elif methot == 'PUT':
-      return requests.put(url, headers=headers, data=json.dumps(payload), timeout=self.time_out).json()
+      return requests.put(url, headers=headers, data=json.dumps(payload), timeout=self.timeout).json()
 
     elif methot == 'DELETE':
       return requests.delete(url, headers=headers, params=payload).json()
