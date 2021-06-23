@@ -17,7 +17,9 @@ class API:
       payload.update(params)
 
     with requests.Session() as session:
-      return session.request(method=methot, url=url, data=payload, timeout=self.timeout).json()
+      response = session.request(method=methot, url=url, data=payload, timeout=self.timeout)
+      if 'application/json' in response.headers['Content-Type']:
+        return response.json()
 
   #
   # /admin-home
