@@ -9,6 +9,7 @@
     "VENV",
     "growi",
     "ldap",
+    "miya",
     "mongodb",
     "noqa",
     "pipenv"
